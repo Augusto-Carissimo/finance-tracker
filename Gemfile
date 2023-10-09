@@ -75,3 +75,4 @@ end
 
 gem "devise", "~> 4.9"
 gem 'cssbundling-rails'
+gem 'devise-bootstrap-views', '~> 1.0'
