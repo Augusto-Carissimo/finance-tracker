@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :user_stocks
   get 'stocks/search'
-  get 'my_portofolio', to: 'users#my_portofolio'
+  get 'my_portfolio', to: 'users#my_portfolio'
 
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
