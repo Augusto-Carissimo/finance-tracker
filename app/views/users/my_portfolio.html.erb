@@ -16,7 +16,10 @@
   <% end %>
 </div>
 <br>
-<%= render 'users/results' %>
+
+<div class='results_turbo_stream'>
+  <%= render 'users/results' %>
+</div>
 
 <% if !@tracked_stocks.empty? %>
   <%= render 'stocks/list' %>
