@@ -3,7 +3,6 @@ class StocksController < ApplicationController
     if params[:stock].present?
       @stock = Stock.new_lookup(params[:stock])
       if @stock
-        # render 'users/my_portfolio'
         update_search
       else
         flash[:alert] = "Please enter a valid symbol to search"
