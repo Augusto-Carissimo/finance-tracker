@@ -1,0 +1,23 @@
+<%= turbo_frame_tag 'results_turbo_stream' do %>
+  <% if @friends %>
+    <% @friends.each do |friend|%>
+      <div class="card card-header results-block">
+        <table class="col-md-12">
+          <tbody>
+            <tr>
+              <td> <strong>Name: </strong> <%= friend.full_name %> </td>
+              <td> <%= button_to 'Profile', user_path(friend), method: :get, data: { turbo: false }, class: "btn btn-xs btn-success" %> </td>
+              <% if current_user.is_friends_with?(friend.id) %>
+                <td> <%= button_to 'Add to friendships', friendships_path(user: current_user, friend: friend),
+                                                         method: :post, class: "btn btn-xs btn-success" %> </td>
+              <% else %>
+                <td> Already friends with </td>
+              <% end %>
+            </tr>
+          <tbody>
+        </table>
+      </div>
+      <br>
+    <% end %>
+  <% end %>
+<% end %>
